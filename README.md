@@ -30,6 +30,11 @@ The model currently has access to the following tools:
 - The custom RAG chain uses `PDFMiner` to load the documents, a splitter to split documents into chunks, a Huggingface `BGE` model to embed those chunks, and a `Chroma` retriever. 
 - I also had to use prompt engineering to develop a custom prompt that would allow Mistral to perform RAG well.
 
+### Limitations
+- The app does not include memory for a full chat experience. I tried to integrate memory into the agent bu the LLM always tries to a use a tool even if it does not need to do so. It basically ignores it's chat history.
+- The agent struggles with multi-step and multi-tool tasks. This is likely due to weakness of the Mistral model's functional calling capabilities compared to OpenAI models.
+- The agent is sensitive to prompts. In my experiments, I have found that minor changes in the prompt can make Mistral succeeed or fail to reason properly and reach the correct answer.
+
 ## Helpful References
 I found the following references and tutorials to be very helpful when developing this application:
 - https://medium.com/@jorgepardoserrano/building-a-langchain-agent-with-a-self-hosted-mistral-7b-a-step-by-step-guide-85eda2fbf6c2
