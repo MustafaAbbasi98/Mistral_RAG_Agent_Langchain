@@ -125,8 +125,8 @@ def create_agent(rag_chain):
     agent_executor = AgentExecutor(agent=agent,
                                 tools=tools,
                                 #  memory=memory,
-                                verbose=True,
-                                return_intermediate_steps=True,
+                                # verbose=True,
+                                # return_intermediate_steps=True,
                                 handle_parsing_errors=True)
     
     return agent_executor
