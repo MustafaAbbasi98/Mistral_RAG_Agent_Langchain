@@ -67,7 +67,6 @@ Thought: {agent_scratchpad}
 @tool
 def calculator(expression: str) -> Union[str, int, float]:
   """"Use this tool for math operations. You MUST MUST MUST use correct numexpr syntax. Use it always you need to solve any math operation. Be sure syntax is correct."""
-  print("\n", expression, len(expression), type(expression))
   try:
     return ne.evaluate(expression).item()
   except Exception:
