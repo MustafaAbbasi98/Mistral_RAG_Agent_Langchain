@@ -23,7 +23,7 @@ The model currently has access to the following tools:
 - The LLM decides the tool and calls the tool with the correct arguments.
 - The output of this tool is fed back into the LLM which helps it return it's final answer.
 - Note: I found that version 0.3 of `Mistral-Instruct` performs better than version 0.2 for tool calling. 
-- I also had to use custom prompt engineering to improve Mistral's tool calling. Through experiments, I found out that a `react-json` agent that outputs JSON works better than the typical `react`-only agent.
+- I also had to use custom prompt engineering to improve Mistral's tool calling ability. Through experiments, I found out that a `react-json` agent that outputs JSON works better than the typical `react`-only agent.
 
 ### Retrieval Augmented Generation (RAG)
 - If the LLM decides to use the Research tool, it will end up invoking the custom RAG chain created on top of the original PDF document uploaded by the user.
@@ -31,8 +31,8 @@ The model currently has access to the following tools:
 - I also had to use prompt engineering to develop a custom prompt that would allow Mistral to perform RAG well.
 
 ### Limitations
-- The app does not include memory for a full chat experience. I tried to integrate memory into the agent bu the LLM always tries to a use a tool even if it does not need to do so. It basically ignores it's chat history.
-- The agent struggles with multi-step and multi-tool tasks. This is likely due to weakness of the Mistral model's functional calling capabilities compared to OpenAI models.
+- The app does not include memory for a full chat experience. I tried to integrate memory into the agent but the LLM always tries to a use a tool even if it does not need to do so. It basically ignores it's chat history.
+- The agent struggles with multi-step and multi-tool tasks. This is likely due to the weakness of the Mistral model's functional calling capabilities compared to OpenAI models.
 - The agent is sensitive to prompts. In my experiments, I have found that minor changes in the prompt can make Mistral succeeed or fail to reason properly and reach the correct answer.
 
 ## Helpful References
