@@ -101,6 +101,9 @@ with st.expander("View Tips and Instructions"):
                 
                 • Avoid queries that require multi-step reasoning or multi-step tool usage.        
                 
+                • If you still want multi-step/tool reasoning try appending the following phrase at the end of your query:
+                "You MUST think step-by-step"
+                
                 """
                 )
 
